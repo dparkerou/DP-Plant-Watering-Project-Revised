@@ -1,6 +1,7 @@
-package com.techelevator.DP_Plant_Watering_Side_Project;
+package com.techelevator.plants.models;
 
-public class Plant {
+public class CommonPlant {
+	
 	//Instance Variables
 	private int lastWatered; //How many days it's been since last watered
 	private int frequency;
@@ -25,7 +26,11 @@ public class Plant {
 		this.frequency = frequency;
 	}
 	public int getDaysToWater(int frequency, int lastWatered) {
+		if (lastWatered < frequency) {
 		daysToWater = frequency - lastWatered; 
+		} else {
+			daysToWater = 0;
+		}
 		return daysToWater;
 	}
 	public String getType() {
@@ -36,7 +41,7 @@ public class Plant {
 	}
 	
 	//Constructor
-	public Plant (String type) {
+	public CommonPlant (String type) {
 		this.type = type;
 	}
 	

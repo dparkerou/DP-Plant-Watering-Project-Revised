@@ -1,6 +1,9 @@
-package com.techelevator.DP_Plant_Watering_Side_Project;
+package com.techelevator.plants;
 
 import java.util.Scanner;
+
+import com.techelevator.plants.models.CommonPlant;
+import com.techelevator.plants.models.Plant;
 
 public class App {
 	
@@ -53,13 +56,12 @@ public class App {
 		}
 		
 		//Instantiate plant 
-		Plant planty = new Plant(plantType);
-		
-		if (daysSinceWatered > 20) {
-			System.out.println("Whew! You might be overdue, but let's check your plant's soil just to make sure.");
+		CommonPlant planty = new CommonPlant(plantType);
+		int plantFrequency = planty.getFrequencyByType(plantType);
+		if (daysSinceWatered > 20 || daysSinceWatered > plantFrequency) {
+			System.out.println("You might be overdue for watering, but let's check your plant's soil just to make sure.");
 		}
-		else {//declare int to hold watering frequency + display frequency 
-			int plantFrequency = planty.getFrequencyByType(plantType);
+		else if (daysSinceWatered > plantFrequency) {//declare int to hold watering frequency + display frequency 
 			System.out.println("You'd normally want to water in " 
 					+ planty.getDaysToWater(plantFrequency, daysSinceWatered)
 					+ " days, but let's check your plant's soil just to make sure.");
