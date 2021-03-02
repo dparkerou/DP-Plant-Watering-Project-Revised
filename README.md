@@ -8,5 +8,5 @@ Eveuntually, I'd like it to be a tracking and water management program for those
 
 To date, I've created the database to keep track of the user's plants, and have created the model classes and interfaces to interact with that database.
 
-Next steps: complete the concrete classes for database interaction
-            research equipment/an API to implement auto watering based on soil dryness or water level in a self watering container
+Next steps: -complete the concrete classes for database interaction
+            -research equipment/an API to implement auto watering based on soil dryness or water level in a self watering container
